@@ -27,7 +27,7 @@
 		"build": "npx tsc",
 		"start": "node dist/index.js"
 	    }
-
+8 Modificar archivo tsconfig.json descomentado la linea ```"outDir": "./"``` y agregando la carpeta dist ```"outDir": "./dist"```
 
 ## Ejecutar APP
 Clonar repositorio y correr el comando 
