@@ -1,4 +1,5 @@
 # TS-Expressjs
+### Crear una una carpeta ejemplo "Miprimerapi", ingresar a la carpeta ```cd Miprimerapi```
  1- iniciamos el repositorio npm 
 
     npm init --yes
