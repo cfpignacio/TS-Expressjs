@@ -4,7 +4,7 @@ import { logParam } from './logMiddleware';
 const app: Express = express();
 
 app.get('/', (req: Request, res: Response) => {
-	res.send('HOLA DESDE LA API');
+	console.log(req);
 });
 
 // /usuarios/1
@@ -14,7 +14,7 @@ app.get('/usuarios/:usuarioId', logParam, (req: Request, res: Response) => {
 		{
 			id: 1,
 			email: 'usuario1@example.com',
-			nombre: 'Juan',
+			nombre: 'Ignacio',
 			apellido: 'Pérez',
 			edad: 28,
 			activo: true,

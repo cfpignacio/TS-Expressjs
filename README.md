@@ -1,5 +1,9 @@
 # TS-Expressjs
+## Es necesario instalar de Global los siguiente paquetes
+    npm i -g concurrently nodemon
 ### Crear una una carpeta ejemplo "Miprimerapi", ingresar a la carpeta ```cd Miprimerapi``` iniciar repositorio con github
+
+
  1- iniciamos el repositorio npm 
 
     npm init --yes
