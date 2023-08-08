@@ -1,4 +1,5 @@
 import express, { Express, Request, Response } from 'express';
+import { logParam } from './logMiddleware';
 
 const app: Express = express();
 
@@ -8,7 +9,7 @@ app.get('/', (req: Request, res: Response) => {
 
 // /usuarios/1
 // /usuarios/2
-app.get('/usuarios/:usuarioId', (req: Request, res: Response) => {
+app.get('/usuarios/:usuarioId', logParam, (req: Request, res: Response) => {
 	const usuarios: Array<any> = [
 		{
 			id: 1,
@@ -27,17 +28,11 @@ app.get('/usuarios/:usuarioId', (req: Request, res: Response) => {
 			activo: false,
 		},
 	];
-
 	// Fix con filter
-
-	const u = usuarios.map((u) => {
-		if (u.id == req.params.usuarioId) {
-			return u;
-		}
-	});
+	const u = usuarios.filter((u) => u.id == req.params.usuarioId);
 
 	if (u.length <= 0) {
-		res.status(404).json({
+		res.status(500).json({
 			msg: `No se encontro ningun usuario con el id: ${req.params.usuarioId}`,
 		});
 	}
